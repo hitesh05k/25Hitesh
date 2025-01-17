@@ -1,0 +1,206 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "49095a19-7992-49e0-9d44-f81fa88a040c",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Requirement already satisfied: opencv-python in c:\\users\\ujjwal singla\\anaconda3\\lib\\site-packages (4.10.0.84)\n",
+      "Requirement already satisfied: numpy>=1.21.2 in c:\\users\\ujjwal singla\\anaconda3\\lib\\site-packages (from opencv-python) (1.26.4)\n"
+     ]
+    }
+   ],
+   "source": [
+    "!pip install opencv-python"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "8bd7fd01-819b-4477-b5d5-7350d354c875",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import cv2\n",
+    "import numpy as np\n",
+    "import matplotlib.pyplot as plt"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "089dc66a-a895-4755-ae22-a11f076f1464",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "img = cv2.imread(r\"pythonassignment.png\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "b47afef1-3611-4c77-9a50-b04cca32766a",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<class 'numpy.ndarray'>\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(type(img))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "633237d6-87fc-49e8-aad8-90cf053af849",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "cv2.imshow(\"practical assignment\" ,img)\n",
+    "cv2.waitKey(0)\n",
+    "cv2.destroyAllWindows()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "ad571134-7a34-4b35-a8e2-0d66c5432909",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "(1237, 1986, 3)\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(img.shape)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "1893f955-5dc1-425a-a01b-fab053e3780e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "img_resize = cv2.resize(img,(400,256))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "11611ae2-089f-4232-80b7-96caa97617d5",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "cv2.imshow(\"practical assignment\" ,img_resize)\n",
+    "cv2.waitKey(0)\n",
+    "cv2.destroyAllWindows()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "id": "875e1adf-2c86-4fe1-9f62-3b1b976debd1",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "(256, 400, 3)\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(img_resize.shape)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "id": "482d0ddc-33c5-497e-8a83-810d3131f297",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "img_flip = cv2.flip(img,1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "id": "0293d6b1-de4e-40ac-b0ab-8dc9e5a4f5b0",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "cv2.imshow(\"flipped image\" ,img_flip)\n",
+    "cv2.waitKey(0)\n",
+    "cv2.destroyAllWindows()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 33,
+   "id": "f342f17e-995d-48b8-b2b8-764a2463bfa2",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "img_flip1 = cv2.flip(img,0)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 35,
+   "id": "112ee025-3b01-46bd-9bb7-05898c4ca9d4",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "cv2.imshow(\"flipped image\" ,img_flip1)\n",
+    "cv2.waitKey(0)\n",
+    "cv2.destroyAllWindows()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "6fb48f63-e3bc-45ac-93c6-77ba6c8f61c2",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python [conda env:base] *",
+   "language": "python",
+   "name": "conda-base-py"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.7"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
